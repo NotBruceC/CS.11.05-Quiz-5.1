@@ -1,5 +1,4 @@
 public class Main {
-
     /**
      * Given two arrays of integers, write a method called combine that combines the two arrays into one larger array.
      * The method combine will return a new one dimensional array of integers.
@@ -8,9 +7,14 @@ public class Main {
      * zip(myArray1, myArray2) → {1,3,5,7,9,2,4,6,8,10,12,14,16}
      */
     public static int[] combine(int[] array1, int[] array2) {
-
-        return null;
-
+        int[] zip = new int[array1.length + array2.length];
+        for(int i=0; i<array1.length; i++){
+          zip[i] = array1[i];
+        }
+        for(int j=0; j<array2.length; j++){
+            zip[j+array1.length] = array2[j];
+        }
+        return zip;
     }
 
     /**
@@ -21,9 +25,17 @@ public class Main {
      * zip(myArray1, myArray2) → {1,2,3,4,5,6,7,8,9,10}
      */
     public static int[] zip(int[] array1, int[] array2) {
-
-        return null;
-
+        int[] zip = new int[array1.length+array2.length];
+        int j=0;
+        for(int i=0; i<array1.length+array2.length; i++){
+            if(i%2==1){
+                zip[i] = array2[j];
+                j++;
+            } else if (i%2 ==0 ){
+                zip[i] = array1[j];
+            }
+        }
+        return zip;
     }
 
     /**
@@ -34,9 +46,11 @@ public class Main {
      * product(myArray1, myArray2) → {2,12,30,56,90}
      */
     public static int[] product(int[] array1, int[] array2) {
-
-        return null;
-
+        int[] zip = new int[array1.length];
+        for(int i=0; i<array1.length; i++){
+            zip[i] = array1[i]*array2[i];
+        }
+        return zip;
     }
 
     /**
@@ -56,15 +70,21 @@ public class Main {
      * capitalCount(words) → {1, 2, 2, 0}
      */
     public static int[] capitalCount(String[] words) {
-
-        return null;
-
+    return null;
     }
 
     public static int countCapitalLetters(String word) {
-
+        String[] word2 = new String[5];
+        int temp = 0;
+        int ok = 0;
+        for(int i=0; i<word.length(); i++){
+            if(word.charAt(i)==' '){
+                word2[ok] = word.substring(temp,i);
+                temp = i;
+                ok++;
+            }
+        }
         return 0;
-
     }
 
 }
